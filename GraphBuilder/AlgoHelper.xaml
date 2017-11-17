@@ -1,0 +1,12 @@
+﻿<Window x:Class="GraphBuilder.AlgoHelper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GraphBuilder"
+        mc:Ignorable="d"
+        Name = "wndHelper" Title="Helper" Height="150" Width="350" Icon="/Icons/Main_Icon.ico" MinHeight="150" MinWidth="350" MaxHeight="150" MaxWidth="350" WindowStartupLocation="CenterScreen" Closing="wndHelper_Closing">
+    <Grid Margin="0,0,0,0" Background="Orange">
+        <TextBox x:Name="textBoxHelp" HorizontalAlignment="Left" Height="34" Margin="1,44,0,0" TextWrapping="Wrap" FontFamily="Bulka" FontSize="20" TextAlignment="Center" VerticalAlignment="Top" Width="350" IsEnabled="False"/>
+    </Grid>
+</Window>

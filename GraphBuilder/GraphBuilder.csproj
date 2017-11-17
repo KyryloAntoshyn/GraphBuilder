@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1111735-A327-48DC-B3D2-AB8FE3D5C001}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GraphBuilder</RootNamespace>
+    <AssemblyName>GraphBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Main_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ab2d.Controls.ZoomPanel, Version=5.1.6011.45, Culture=neutral, PublicKeyToken=d45c8e156fba2841, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\AB4D Products (Trial)\Ab2d.Controls.ZoomPanel\bin\net45\Ab2d.Controls.ZoomPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AlgoHelper.xaml.cs">
+      <DependentUpon>AlgoHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgorithmResult.xaml.cs">
+      <DependentUpon>AlgorithmResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Arrow.cs" />
+    <Compile Include="BFS.cs" />
+    <Compile Include="DijkstraAlgorithm.cs" />
+    <Compile Include="Edge.cs" />
+    <Compile Include="GraphAlgorithms.cs" />
+    <Compile Include="Graph.cs" />
+    <Compile Include="HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LineColors.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrimAlgorithm.cs" />
+    <Compile Include="Vertex.cs" />
+    <Page Include="AlgoHelper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgorithmResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HelpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Icons\Photoshop\AddEdge.psd" />
+    <None Include="Icons\Photoshop\AddEdgePressed.psd" />
+    <None Include="Icons\Photoshop\AddVertex.psd" />
+    <None Include="Icons\Photoshop\AddVertexPressed.psd" />
+    <None Include="Icons\Photoshop\Algorithm.psd" />
+    <None Include="Icons\Photoshop\AlgorithmPressed.psd" />
+    <None Include="Icons\Photoshop\BricksBackgroundLeft.psd" />
+    <None Include="Icons\Photoshop\BricksBackgroundTop.psd" />
+    <None Include="Icons\Photoshop\DelEdge.psd" />
+    <None Include="Icons\Photoshop\DelEdgePressed.psd" />
+    <None Include="Icons\Photoshop\DelVertex.psd" />
+    <None Include="Icons\Photoshop\DelVertexPressed.psd" />
+    <None Include="Icons\Photoshop\Edit.psd" />
+    <None Include="Icons\Photoshop\EditPressed.psd" />
+    <None Include="Icons\Photoshop\Help.psd" />
+    <None Include="Icons\Photoshop\HelpPressed.psd" />
+    <None Include="Icons\Photoshop\Open.psd" />
+    <None Include="Icons\Photoshop\OpenPressed.psd" />
+    <None Include="Icons\Photoshop\Redo.psd" />
+    <None Include="Icons\Photoshop\RedoPressed.psd" />
+    <None Include="Icons\Photoshop\Save.psd" />
+    <None Include="Icons\Photoshop\SavePressed.psd" />
+    <None Include="Icons\Photoshop\Undo.psd" />
+    <None Include="Icons\Photoshop\UndoPressed.psd" />
+    <None Include="Icons\Photoshop\ZoomIn.psd" />
+    <None Include="Icons\Photoshop\ZoomInPressed.psd" />
+    <None Include="Icons\Photoshop\ZoomOut.psd" />
+    <None Include="Icons\Photoshop\ZoomOutPressed.psd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\AddEdge.png" />
+    <Resource Include="Icons\AddEdgePressed.png" />
+    <Resource Include="Icons\AddVertex.png" />
+    <Resource Include="Icons\AddVertexPressed.png" />
+    <Resource Include="Icons\Algorithm.png" />
+    <Resource Include="Icons\AlgorithmPressed.png" />
+    <Resource Include="Icons\BricksBackgroundLeft.png" />
+    <Resource Include="Icons\BricksBackgroundTop.png" />
+    <Resource Include="Icons\btnSave.png" />
+    <Resource Include="Icons\DelEdge.png" />
+    <Resource Include="Icons\DelEdgePressed.png" />
+    <Resource Include="Icons\DelVertex.png" />
+    <Resource Include="Icons\DelVertexPressed.png" />
+    <Resource Include="Icons\Edit.png" />
+    <Resource Include="Icons\EditPressed.png" />
+    <Resource Include="Icons\Help.png" />
+    <Resource Include="Icons\HelpPressed.png" />
+    <Resource Include="Icons\Main_Icon.ico" />
+    <Resource Include="Icons\Open.png" />
+    <Resource Include="Icons\OpenPressed.png" />
+    <Resource Include="Icons\Redo.png" />
+    <Resource Include="Icons\RedoPressed.png" />
+    <Resource Include="Icons\SavePressed.png" />
+    <Resource Include="Icons\Undo.png" />
+    <Resource Include="Icons\UndoPressed.png" />
+    <Resource Include="Icons\ZoomIn.png" />
+    <Resource Include="Icons\ZoomInPressed.png" />
+    <Resource Include="Icons\ZoomOut.png" />
+    <Resource Include="Icons\ZoomOutPressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Main_Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
